@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
   return view('home');
 });
+
+Route::get('/master/dompet', function () {
+  return view('master.dompet');
+})->name('masterDompet');
+Route::get('/master/kategori', function () {
+  return view('master.kategori');
+})->name('masterKategori');
