@@ -5,11 +5,21 @@
     </div>
 
     <div class="flex items-center">
-      <a href="" class="px-2 py-3 text-white rounded-lg bg-sky-500 hover:bg-sky-700">Buat baru</a>
+      {{--
+      kita menggambil query dari search tapi menghilangkan status dari query sebelumnya agar tidak double dengan cara
+      request()->except('status')
+      pada method diatas akan menghasilkan array, maka kita harus convert dari array menjadi string yang berupa query
+      dengan menggunakan method php http_build_query()
+      --}}
+      <a href="?{{ http_build_query(request()->except('status', 'page')) }}"
+        class="px-2 py-3 text-white rounded-lg bg-sky-500 hover:bg-sky-700">Buat baru</a>
       <div class="flex">
-        <a href="?" class="px-2 py-3 border rounded-l-lg text-sky-500 hover:bg-sky-700 border-sky-500">Semua</a>
-        <a href="?status=1" class="px-2 py-3 border text-sky-500 hover:bg-sky-700 border-sky-500">Aktif</a>
-        <a href="?status=2" class="px-2 py-3 border rounded-r-lg text-sky-500 hover:bg-sky-700 border-sky-500">Tidak
+        <a href="?&{{ http_build_query(request()->except('status', 'page')) }}"
+          class="px-2 py-3 border rounded-l-lg text-sky-500 hover:bg-sky-700 border-sky-500">Semua</a>
+        <a href="?status=1&{{ http_build_query(request()->except('status', 'page')) }}"
+          class="px-2 py-3 border text-sky-500 hover:bg-sky-700 border-sky-500">Aktif</a>
+        <a href="?status=2&{{ http_build_query(request()->except('status', 'page')) }}"
+          class="px-2 py-3 border rounded-r-lg text-sky-500 hover:bg-sky-700 border-sky-500">Tidak
           Aktif</a>
       </div>
     </div>
