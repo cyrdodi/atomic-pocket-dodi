@@ -11,8 +11,8 @@
 
 <body class="h-screen">
   {{-- header --}}
-  <header class="bg-sky-100 text-sky-500 border-b ">
-    <div class="container mx-auto p-4">
+  <header class="border-b bg-sky-100 text-sky-500 ">
+    <div class="container p-4 mx-auto">
       <h1>Dompet Dodi Yulian</h1>
     </div>
   </header>
@@ -20,7 +20,7 @@
   <div class="flex">
 
     {{-- sidebar --}}
-    <section class="w-80 p-6 bg-blue-100">
+    <section class="p-6 bg-blue-100 w-80">
       <nav>
         <h2 class="font-semibold">Master</h2>
         <ul>
@@ -39,14 +39,14 @@
       </nav>
     </section>
     {{-- content --}}
-    <section>
+    <section class="flex-1 p-6">
       {{ $slot }}
 
     </section>
   </div>
 
   {{-- footer --}}
-  <footer class="p-6 bg-sky-100 text-center text-sky-500">
+  <footer class="p-6 text-center bg-sky-100 text-sky-500">
     <h2>Maju bersama Atomic</h2>
   </footer>
 </body>

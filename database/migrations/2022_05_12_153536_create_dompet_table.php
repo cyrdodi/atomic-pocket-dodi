@@ -15,7 +15,7 @@ class CreateDompetTable extends Migration
   {
     Schema::create('dompet', function (Blueprint $table) {
       $table->id();
-      $table->string('name');
+      $table->string('nama');
       $table->string('referensi');
       $table->string('deskripsi');
       $table->foreignId('status_id')->references('id')->on('dompet_status')->constrained();
