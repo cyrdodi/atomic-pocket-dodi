@@ -512,6 +512,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .table {
   display: table;
 }
+.table-cell {
+  display: table-cell;
+}
+.table-row-group {
+  display: table-row-group;
+}
+.table-row {
+  display: table-row;
+}
 .grid {
   display: grid;
 }
@@ -547,6 +556,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-full {
   width: 100%;
+}
+.w-64 {
+  width: 16rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -658,6 +670,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -716,6 +732,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

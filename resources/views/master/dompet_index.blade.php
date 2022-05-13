@@ -11,8 +11,7 @@
       pada method diatas akan menghasilkan array, maka kita harus convert dari array menjadi string yang berupa query
       dengan menggunakan method php http_build_query()
       --}}
-      <a href="?{{ http_build_query(request()->except('status', 'page')) }}"
-        class="px-2 py-3 mr-4 text-white rounded-lg bg-sky-500 hover:bg-sky-700">Buat baru</a>
+      <x-button href="">Buat Baru</x-button>
       <div class="flex">
         <a href="?&{{ http_build_query(request()->except('status', 'page')) }}"
           class="px-2 py-3 rounded-l-lg {{ !request('status') ? 'btn-status-active' : 'btn-status-inactive' }}">Semua</a>
@@ -59,7 +58,7 @@
           <td class="px-2 py-3">{{ $item->deskripsi }}</td>
           <td class="px-2 py-3">{{ $item->status->nama }}</td>
           <td class="px-2 py-3">
-            <a href="">Detail</a>
+            <a href="/master/dompet/{{ $item->id }}">Detail</a>
             <a href="">Ubah</a>
             <form action="{{ route('masterDompetStatusUpdate') }}" method="post">
               @csrf

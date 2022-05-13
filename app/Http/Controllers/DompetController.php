@@ -16,7 +16,6 @@ class DompetController extends Controller
 
   public function show(Dompet $dompet)
   {
-
     return view('master.dompet_show', ['dompet' => $dompet]);
   }
 }
