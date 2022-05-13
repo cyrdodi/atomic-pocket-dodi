@@ -1,7 +1,7 @@
 <x-layout>
-  <div class="flex justify-between px-4 py-2 rounded-lg shadow">
+  <div class="flex items-center justify-between px-4 py-2 rounded-lg shadow">
     <div class="flex">
-      <h1>Dompet</h1> | <h2>Semua</h2>
+      <h1>Dompet</h1> | <h2></h2>
     </div>
 
     <div class="flex items-center">
@@ -12,14 +12,14 @@
       dengan menggunakan method php http_build_query()
       --}}
       <a href="?{{ http_build_query(request()->except('status', 'page')) }}"
-        class="px-2 py-3 text-white rounded-lg bg-sky-500 hover:bg-sky-700">Buat baru</a>
+        class="px-2 py-3 mr-4 text-white rounded-lg bg-sky-500 hover:bg-sky-700">Buat baru</a>
       <div class="flex">
         <a href="?&{{ http_build_query(request()->except('status', 'page')) }}"
-          class="px-2 py-3 border rounded-l-lg text-sky-500 hover:bg-sky-700 border-sky-500">Semua</a>
+          class="px-2 py-3 rounded-l-lg {{ !request('status') ? 'btn-status-active' : 'btn-status-inactive' }}">Semua</a>
         <a href="?status=1&{{ http_build_query(request()->except('status', 'page')) }}"
-          class="px-2 py-3 border text-sky-500 hover:bg-sky-700 border-sky-500">Aktif</a>
+          class="px-2 py-3 {{ request('status') == 1 ? 'btn-status-active' : 'btn-status-inactive' }}">Aktif</a>
         <a href="?status=2&{{ http_build_query(request()->except('status', 'page')) }}"
-          class="px-2 py-3 border rounded-r-lg text-sky-500 hover:bg-sky-700 border-sky-500">Tidak
+          class="px-2 py-3 rounded-r-lg {{ request('status') == 2 ? 'btn-status-active' : 'btn-status-inactive' }}">Tidak
           Aktif</a>
       </div>
     </div>
@@ -39,7 +39,7 @@
 
   {{-- table --}}
   <div class="w-full mt-6 overflow-x-auto rounded-lg shadow">
-    <table class="w-full overflow-hidden">
+    <table class="w-full overflow-hidden text-sm">
       <thead class="border-b">
         <tr>
           <th class="px-2 py-3">#</th>
@@ -47,6 +47,7 @@
           <th class="px-2 py-3 text-left">Referensi</th>
           <th class="px-2 py-3 text-left">Deskripsi</th>
           <th class="px-2 py-3 text-left">Status</th>
+          <th class="px-2 py-3 ">Action</th>
         </tr>
       </thead>
       <tbody class="divide-y">
@@ -57,6 +58,15 @@
           <td class="px-2 py-3">{{ $item->referensi }}</td>
           <td class="px-2 py-3">{{ $item->deskripsi }}</td>
           <td class="px-2 py-3">{{ $item->status->nama }}</td>
+          <td class="px-2 py-3">
+            <a href="">Detail</a>
+            <a href="">Ubah</a>
+            <form action="{{ route('masterDompetStatusUpdate') }}" method="post">
+              @csrf
+              <input type="text" name="dompet_id" value="{{ $item->id }}" hidden>
+              <button type="submit">{{ $item->status->nama }}</button>
+            </form>
+          </td>
         </tr>
         @endforeach
       </tbody>

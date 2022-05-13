@@ -10,6 +10,13 @@ class Dompet extends Model
 {
   use HasFactory;
 
+  protected $fillable = [
+    'nama',
+    'status_id',
+    'referensi',
+    'deskripsi'
+  ];
+
   // mendefinisikan nama table secara spesifik
   protected $table = 'dompet';
 

@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-status-inactive {
+  @apply border text-sky-500 border-sky-500;
+}
+
+.btn-status-active {
+  @apply text-white bg-sky-500;
+}

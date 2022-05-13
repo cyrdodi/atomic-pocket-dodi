@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DompetController;
+use App\Http\Controllers\DompetStatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ Route::get('/', function () {
 });
 
 Route::get('/master/dompet', [DompetController::class, 'index'])->name('masterDompet');
+Route::get('/master/dompet/{dompet}', [DompetController::class, 'show'])->name('masterDompetShow');
+
+Route::post('/master/dompet/update', [DompetStatusController::class, 'update'])->name('masterDompetStatusUpdate');
+
 Route::get('/master/kategori', function () {
   return view('master.kategori');
 })->name('masterKategori');
