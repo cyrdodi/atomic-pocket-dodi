@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DompetController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DompetStatusController;
+use App\Http\Controllers\KategoriStatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,10 @@ Route::get('/master/dompet/{dompet}', [DompetController::class, 'show'])->name('
 Route::post('/master/dompet/update', [DompetStatusController::class, 'update'])->name('masterDompetStatusUpdate');
 
 Route::get('/master/kategori', [KategoriController::class, 'index'])->name('masterKategori');
+Route::get('/master/kategori/create', [KategoriController::class, 'create'])->name('masterKategoriCreate');
+Route::post('/master/kategori/create', [KategoriController::class, 'store']);
+Route::get('/master/kategori/{kategori}/edit', [KategoriController::class, 'edit'])->name('masterKategoriEdit');
+Route::post('/master/kategori/{kategori}/edit', [KategoriController::class, 'update']);
+Route::get('/master/kategori/{kategori}', [KategoriController::class, 'show'])->name('masterKategoriShow');
+
+Route::post('/master/kategori/update', [KategoriStatusController::class, 'update'])->name('masterKategoriStatusUpdate');

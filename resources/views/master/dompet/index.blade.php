@@ -60,13 +60,16 @@
           <td class="px-2 py-3">{{ $item->deskripsi }}</td>
           <td class="px-2 py-3">{{ $item->status->nama }}</td>
           <td class="px-2 py-3">
-            <a href="/master/dompet/{{ $item->id }}">Detail</a>
-            <a href="{{ route('masterDompetEdit', [$item->id]) }}">Ubah</a>
-            <form action="{{ route('masterDompetStatusUpdate') }}" method="post">
-              @csrf
-              <input type="text" name="dompet_id" value="{{ $item->id }}" hidden>
-              <button type="submit">{{ $item->status->nama }}</button>
-            </form>
+            <div class="flex items-center justify-center space-x-2">
+              <x-badge href="/master/dompet/{{ $item->id }}">Detail</x-badge>
+              <x-badge href="{{ route('masterDompetEdit', [$item->id]) }}">Ubah</x-badge>
+              <form action="{{ route('masterDompetStatusUpdate') }}" method="post">
+                @csrf
+                <input type="text" name="dompet_id" value="{{ $item->id }}" hidden>
+                <button type="submit" class="px-2 font-semibold text-white rounded-xl bg-sky-500">{{ $item->status->nama
+                  }}</button>
+              </form>
+            </div>
           </td>
         </tr>
         @endforeach
