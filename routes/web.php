@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DompetController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DompetStatusController;
 
 /*
@@ -28,6 +29,4 @@ Route::get('/master/dompet/{dompet}', [DompetController::class, 'show'])->name('
 
 Route::post('/master/dompet/update', [DompetStatusController::class, 'update'])->name('masterDompetStatusUpdate');
 
-Route::get('/master/kategori', function () {
-  return view('master.kategori');
-})->name('masterKategori');
+Route::get('/master/kategori', [KategoriController::class, 'index'])->name('masterKategori');

@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Dompet;
+use App\Models\Kategori;
 use App\Models\DompetStatus;
+use App\Models\KategoriStatus;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,14 +18,14 @@ class DatabaseSeeder extends Seeder
   public function run()
   {
     // \App\Models\User::factory(10)->create();
-    $dompetStatus = DompetStatus::create([
+    DompetStatus::create([
       'id' => 1,
       'nama' => 'Aktif',
     ]);
 
     DompetStatus::create([
       'id' => 2,
-      'nama' => 'Tidak aktif',
+      'nama' => 'Tidak Aktif',
     ]);
 
     Dompet::create([
@@ -43,6 +45,34 @@ class DatabaseSeeder extends Seeder
       'referensi' => '789',
       'deskripsi' => 'Bank Permata',
       'status_id' => 2,
+    ]);
+
+    KategoriStatus::create([
+      'id' => 1,
+      'nama' => 'Aktif',
+    ]);
+
+    KategoriStatus::create([
+      'id' => 2,
+      'nama' => 'Tidak Aktif',
+    ]);
+
+    Kategori::create([
+      'nama' => 'Pemasukan',
+      'deskripsi' => 'Kategori untuk pemasukan',
+      'status_id' => 1,
+    ]);
+
+    Kategori::create([
+      'nama' => 'Lain-lain',
+      'deskripsi' => 'Kategori lain-lain',
+      'status_id' => 2,
+    ]);
+
+    Kategori::create([
+      'nama' => 'Pengeluaran',
+      'deskripsi' => 'Kategori untuk pengeluaran',
+      'status_id' => 1,
     ]);
   }
 }
