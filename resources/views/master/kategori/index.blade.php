@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex items-center">
-      <x-button href="{{ route('masterKategoriCreate') }}">Buat Baru</x-button>
+      <x-button href="{{ route('master.kategori_create') }}">Buat Baru</x-button>
       <div class="flex">
         {{--
         menggambil query dari search tapi menghilangkan status dari query sebelumnya agar tidak double dengan cara
@@ -59,9 +59,9 @@
           <td class="px-2 py-3">{{ $item->status->nama }}</td>
           <td class="px-2 py-3">
             <div class="flex items-center justify-center space-x-2">
-              <x-badge href="{{ route('masterKategoriShow', [$item->id]) }}">Detail</x-badge>
-              <x-badge href="{{ route('masterKategoriEdit', [$item->id]) }}">Ubah</x-badge>
-              <form action="{{ route('masterKategoriStatusUpdate') }}" method="post">
+              <x-badge href="{{ route('master.kategori_show', [$item->id]) }}">Detail</x-badge>
+              <x-badge href="{{ route('master.kategori_edit', [$item->id]) }}">Ubah</x-badge>
+              <form action="{{ route('master.kategori_status_update') }}" method="post">
                 @csrf
                 <input type="text" name="kategori_id" value="{{ $item->id }}" hidden>
                 <button type="submit" class="px-2 font-semibold text-white rounded-xl bg-sky-500">{{ $item->status->nama

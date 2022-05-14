@@ -1,6 +1,6 @@
 <x-layout>
   <x-header title="Dompet" subtitle="Buat Baru">
-    <x-button href="{{ route('masterDompet') }}">Kelola Dompet</x-button>
+    <x-button href="{{ route('master.dompet') }}">Kelola Dompet</x-button>
   </x-header>
 
   <x-card>

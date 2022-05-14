@@ -24,12 +24,12 @@
       <nav>
         <h2 class="font-semibold">Master</h2>
         <ul>
-          <li><a href="{{ route('masterDompet') }}">Dompet</a></li>
-          <li><a href="{{ route('masterKategori') }}">Kategori</a></li>
+          <li><a href="{{ route('master.dompet') }}">Dompet</a></li>
+          <li><a href="{{ route('master.kategori') }}">Kategori</a></li>
         </ul>
         <h2 class="font-semibold">Transaksi</h2>
         <ul>
-          <li><a href="{{ route('transaksiDompetMasuk') }}">Dompet Masuk</a></li>
+          <li><a href="{{ route('transaksi.dompet_masuk') }}">Dompet Masuk</a></li>
           <li><a href="">Dompet Keluar</a></li>
         </ul>
         <h2 class="font-semibold">Laporan</h2>

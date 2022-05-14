@@ -41,7 +41,7 @@ class DompetController extends Controller
     ]);
 
     // redirect ke halaman master/dompet dengan flash message
-    return redirect()->route('masterDompet')->with('success', 'Dompet berhasil ditambahkan');
+    return redirect()->route('master.dompet')->with('success', 'Dompet berhasil ditambahkan');
   }
 
   public function edit(Dompet $dompet)
@@ -66,6 +66,6 @@ class DompetController extends Controller
     ]);
 
     // redirect ke halaman master/dompet dengan flash message
-    return redirect()->route('masterDompet')->with('success', 'Dompet berhasil diubah');
+    return redirect()->route('master.dompet')->with('success', 'Dompet berhasil diubah');
   }
 }

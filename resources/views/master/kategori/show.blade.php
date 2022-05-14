@@ -1,6 +1,6 @@
 <x-layout>
   <x-header title="Kategori" subtitle="Detail">
-    <x-button href="{{ route('masterKategori') }}">Kembali</x-button>
+    <x-button href="{{ route('master.kategori') }}">Kembali</x-button>
   </x-header>
   <div class="p-4 mt-4 bg-white rounded-lg shadow">
     <div class="table w-full">

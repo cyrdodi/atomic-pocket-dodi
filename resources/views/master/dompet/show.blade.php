@@ -1,6 +1,6 @@
 <x-layout>
   <x-header title="Dompet" subtitle="Detail">
-    <x-button href="{{ route('masterDompet') }}">Kembali</x-button>
+    <x-button href="{{ route('master.dompet') }}">Kembali</x-button>
   </x-header>
   <div class="p-4 mt-4 bg-white rounded-lg shadow">
     <div class="table w-full">

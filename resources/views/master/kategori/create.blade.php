@@ -1,6 +1,6 @@
 <x-layout>
   <x-header title="Kategori" subtitle="Buat Baru">
-    <x-button href="{{ route('masterKategori') }}">Kelola Kategori</x-button>
+    <x-button href="{{ route('master.kategori') }}">Kelola Kategori</x-button>
   </x-header>
 
   <x-card>

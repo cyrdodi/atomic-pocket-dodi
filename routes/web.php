@@ -22,23 +22,23 @@ Route::get('/', function () {
   return view('home');
 });
 
-Route::get('/master/dompet', [DompetController::class, 'index'])->name('masterDompet');
-Route::get('/master/dompet/create', [DompetController::class, 'create'])->name('masterDompetCreate');
+Route::get('/master/dompet', [DompetController::class, 'index'])->name('master.dompet');
+Route::get('/master/dompet/create', [DompetController::class, 'create'])->name('master.dompet_create');
 Route::post('/master/dompet/create', [DompetController::class, 'store']);
-Route::get('/master/dompet/{dompet}/edit', [DompetController::class, 'edit'])->name('masterDompetEdit');
+Route::get('/master/dompet/{dompet}/edit', [DompetController::class, 'edit'])->name('master.dompet_edit');
 Route::post('/master/dompet/{dompet}/edit', [DompetController::class, 'update']);
-Route::get('/master/dompet/{dompet}', [DompetController::class, 'show'])->name('masterDompetShow');
+Route::get('/master/dompet/{dompet}', [DompetController::class, 'show'])->name('master.dompet_show');
 
-Route::post('/master/dompet/update', [DompetStatusController::class, 'update'])->name('masterDompetStatusUpdate');
+Route::post('/master/dompet/update', [DompetStatusController::class, 'update'])->name('master.dompet_status_update');
 
-Route::get('/master/kategori', [KategoriController::class, 'index'])->name('masterKategori');
-Route::get('/master/kategori/create', [KategoriController::class, 'create'])->name('masterKategoriCreate');
+Route::get('/master/kategori', [KategoriController::class, 'index'])->name('master.kategori');
+Route::get('/master/kategori/create', [KategoriController::class, 'create'])->name('master.kategori_create');
 Route::post('/master/kategori/create', [KategoriController::class, 'store']);
-Route::get('/master/kategori/{kategori}/edit', [KategoriController::class, 'edit'])->name('masterKategoriEdit');
+Route::get('/master/kategori/{kategori}/edit', [KategoriController::class, 'edit'])->name('master.kategori_edit');
 Route::post('/master/kategori/{kategori}/edit', [KategoriController::class, 'update']);
-Route::get('/master/kategori/{kategori}', [KategoriController::class, 'show'])->name('masterKategoriShow');
+Route::get('/master/kategori/{kategori}', [KategoriController::class, 'show'])->name('master.kategori_show');
 
-Route::post('/master/kategori/update', [KategoriStatusController::class, 'update'])->name('masterKategoriStatusUpdate');
+Route::post('/master/kategori/update', [KategoriStatusController::class, 'update'])->name('master.kategori_status_update');
 
-Route::get('/transaksi/dompet-masuk', [DompetMasukController::class, 'index'])->name('transaksiDompetMasuk');
-Route::get('/transaksi/dompet-masuk/create', [DompetMasukController::class, 'create'])->name('transaksiDompetMasukCreate');
+Route::get('/transaksi/dompet-masuk', [DompetMasukController::class, 'index'])->name('transaksi.dompet_masuk');
+Route::get('/transaksi/dompet-masuk/create', [DompetMasukController::class, 'create'])->name('transaksi.dompet_masuk_create');

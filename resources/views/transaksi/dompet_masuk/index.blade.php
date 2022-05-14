@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex items-center">
-      <x-button href="{{ route('transaksiDompetMasuk') }}">Buat Baru</x-button>
+      <x-button href="{{ route('transaksi.dompet_masuk') }}">Buat Baru</x-button>
     </div>
   </div>
 
@@ -46,8 +46,8 @@
           <td class="px-2 py-3">
             <div class="flex items-center justify-center space-x-2">
               <x-badge href="/master/dompet/{{ $item->id }}">Detail</x-badge>
-              <x-badge href="{{ route('masterDompetEdit', [$item->id]) }}">Ubah</x-badge>
-              <form action="{{ route('masterDompetStatusUpdate') }}" method="post">
+              <x-badge href="{{ route('master.dompet_edit', [$item->id]) }}">Ubah</x-badge>
+              <form action="{{ route('master.dompet_status_update') }}" method="post">
                 @csrf
                 <input type="text" name="dompet_id" value="{{ $item->id }}" hidden>
                 <button type="submit" class="px-2 font-semibold text-white rounded-xl bg-sky-500">{{ $item->status->nama
