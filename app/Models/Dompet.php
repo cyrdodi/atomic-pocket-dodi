@@ -11,6 +11,7 @@ class Dompet extends Model
   use HasFactory;
 
   protected $fillable = [
+    'kode',
     'nama',
     'status_id',
     'referensi',

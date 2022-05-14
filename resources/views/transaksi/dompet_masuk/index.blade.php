@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex items-center">
-      <x-button href="{{ route('transaksi.dompet_masuk') }}">Buat Baru</x-button>
+      <x-button href="{{ route('transaksi.dompet_masuk_create') }}">Buat Baru</x-button>
     </div>
   </div>
 
@@ -30,10 +30,12 @@
       <thead class="border-b">
         <tr>
           <th class="px-2 py-3">#</th>
-          <th class="px-2 py-3 text-left">Nama</th>
-          <th class="px-2 py-3 text-left">Referensi</th>
+          <th class="px-2 py-3 text-left">Tanggal</th>
+          <th class="px-2 py-3 text-left">Kode</th>
           <th class="px-2 py-3 text-left">Deskripsi</th>
-          <th class="px-2 py-3 text-left">Status</th>
+          <th class="px-2 py-3 text-left">Kategori</th>
+          <th class="px-2 py-3 text-left">Nilai</th>
+          <th class="px-2 py-3 text-left">Dompet</th>
           <th class="px-2 py-3 ">Action</th>
         </tr>
       </thead>
@@ -42,7 +44,11 @@
         <tr>
           <td class="px-2 py-3 text-center">{{ $loop->iteration }}</td>
           <td class="px-2 py-3">{{ $item->tanggal }}</td>
-          <td class="px-2 py-3">{{ $item->status->nama }}</td>
+          <td class="px-2 py-3">{{ $item->kode }}</td>
+          <td class="px-2 py-3">{{ $item->deskripsi }}</td>
+          <td class="px-2 py-3">{{ $item->kategori->nama }}</td>
+          <td class="px-2 py-3">{{ $item->nilai }}</td>
+          <td class="px-2 py-3">{{ $item->dompet->nama }}</td>
           <td class="px-2 py-3">
             <div class="flex items-center justify-center space-x-2">
               <x-badge href="/master/dompet/{{ $item->id }}">Detail</x-badge>

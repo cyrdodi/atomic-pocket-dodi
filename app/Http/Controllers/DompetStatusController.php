@@ -11,7 +11,7 @@ class DompetStatusController extends Controller
   {
     $dompet = Dompet::find(request('dompet_id'));
 
-    // jika staus sebelumnya aktif, maka status akan diubah menjadi tidak aktif dan sebaliknya
+    // jika status sebelumnya aktif, maka status akan diubah menjadi tidak aktif dan sebaliknya
     if ($dompet->status_id == 1) {
       $changeStatus = 2;
     } else if ($dompet->status_id == 2) {

@@ -42,3 +42,4 @@ Route::post('/master/kategori/update', [KategoriStatusController::class, 'update
 
 Route::get('/transaksi/dompet-masuk', [DompetMasukController::class, 'index'])->name('transaksi.dompet_masuk');
 Route::get('/transaksi/dompet-masuk/create', [DompetMasukController::class, 'create'])->name('transaksi.dompet_masuk_create');
+Route::post('/transaksi/dompet-masuk/create', [DompetMasukController::class, 'store']);
