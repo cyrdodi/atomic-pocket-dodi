@@ -21,6 +21,6 @@ class DompetStatusController extends Controller
     $dompet->update(['status_id' => $changeStatus]);
 
     // redirect back
-    return redirect()->back();
+    return redirect()->back()->with('success', 'Status berhasil diubah');
   }
 }
