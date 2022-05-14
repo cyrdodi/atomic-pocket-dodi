@@ -43,4 +43,29 @@ class DompetController extends Controller
     // redirect ke halaman master/dompet dengan flash message
     return redirect()->route('masterDompet')->with('success', 'Dompet berhasil ditambahkan');
   }
+
+  public function edit(Dompet $dompet)
+  {
+    return view('master.dompet_edit', ['dompet' => $dompet, 'status' => DompetStatus::get()]);
+  }
+
+  public function update()
+  {
+    // validasi form
+    request()->validate([
+      'nama' => 'required|min:5',
+      'deskripsi' => 'max:100'
+    ]);
+
+    // update ke database
+    Dompet::where('id', request('id'))->update([
+      'nama' => request('nama'),
+      'status_id' => request('status'),
+      'referensi' => request('referensi'),
+      'deskripsi' => request('deskripsi')
+    ]);
+
+    // redirect ke halaman master/dompet dengan flash message
+    return redirect()->route('masterDompet')->with('success', 'Dompet berhasil diubah');
+  }
 }

@@ -61,7 +61,7 @@
           <td class="px-2 py-3">{{ $item->status->nama }}</td>
           <td class="px-2 py-3">
             <a href="/master/dompet/{{ $item->id }}">Detail</a>
-            <a href="">Ubah</a>
+            <a href="{{ route('masterDompetEdit', [$item->id]) }}">Ubah</a>
             <form action="{{ route('masterDompetStatusUpdate') }}" method="post">
               @csrf
               <input type="text" name="dompet_id" value="{{ $item->id }}" hidden>

@@ -22,6 +22,8 @@ Route::get('/', function () {
 Route::get('/master/dompet', [DompetController::class, 'index'])->name('masterDompet');
 Route::get('/master/dompet/create', [DompetController::class, 'create'])->name('masterDompetCreate');
 Route::post('/master/dompet/create', [DompetController::class, 'store']);
+Route::get('/master/dompet/{dompet}/edit', [DompetController::class, 'edit'])->name('masterDompetEdit');
+Route::post('/master/dompet/{dompet}/edit', [DompetController::class, 'update']);
 Route::get('/master/dompet/{dompet}', [DompetController::class, 'show'])->name('masterDompetShow');
 
 Route::post('/master/dompet/update', [DompetStatusController::class, 'update'])->name('masterDompetStatusUpdate');
