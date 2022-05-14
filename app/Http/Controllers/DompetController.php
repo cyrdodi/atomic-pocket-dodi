@@ -12,17 +12,17 @@ class DompetController extends Controller
   {
     $dompet = Dompet::filter(request(['status', 'search']))->paginate(10);
 
-    return view('master.dompet_index', ['dompet' => $dompet]);
+    return view('master.dompet.index', ['dompet' => $dompet]);
   }
 
   public function show(Dompet $dompet)
   {
-    return view('master.dompet_show', ['dompet' => $dompet]);
+    return view('master.dompet.show', ['dompet' => $dompet]);
   }
 
   public function create()
   {
-    return view('master.dompet_create', ['status' => DompetStatus::get()]);
+    return view('master.dompet.create', ['status' => DompetStatus::get()]);
   }
 
   public function store()
@@ -46,7 +46,7 @@ class DompetController extends Controller
 
   public function edit(Dompet $dompet)
   {
-    return view('master.dompet_edit', ['dompet' => $dompet, 'status' => DompetStatus::get()]);
+    return view('master.dompet.edit', ['dompet' => $dompet, 'status' => DompetStatus::get()]);
   }
 
   public function update()
