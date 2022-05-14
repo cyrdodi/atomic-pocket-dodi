@@ -13,6 +13,14 @@ class TransaksiStatus extends Model
   // mendefinisikan nama table secara spesifik
   protected $table = 'transaksi_status';
 
+  // mendefinisikan kolom yang dapat diisi
+  protected $fillable = [
+    'nama',
+  ];
+
+  // disable timestamps
+  public $timestamps = false;
+
   // relationship antar table
   public function transaksi()
   {

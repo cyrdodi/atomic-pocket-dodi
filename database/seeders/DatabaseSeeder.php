@@ -6,6 +6,7 @@ use App\Models\Dompet;
 use App\Models\Kategori;
 use App\Models\DompetStatus;
 use App\Models\KategoriStatus;
+use App\Models\TransaksiStatus;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -73,6 +74,16 @@ class DatabaseSeeder extends Seeder
       'nama' => 'Pengeluaran',
       'deskripsi' => 'Kategori untuk pengeluaran',
       'status_id' => 1,
+    ]);
+
+    TransaksiStatus::create([
+      'id' => 1,
+      'nama' => 'Masuk',
+    ]);
+
+    TransaksiStatus::create([
+      'id' => 2,
+      'nama' => 'Keluar',
     ]);
   }
 }
