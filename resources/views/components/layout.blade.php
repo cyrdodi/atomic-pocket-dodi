@@ -29,7 +29,7 @@
         </ul>
         <h2 class="font-semibold">Transaksi</h2>
         <ul>
-          <li><a href="">Dompet Masuk</a></li>
+          <li><a href="{{ route('transaksiDompetMasuk') }}">Dompet Masuk</a></li>
           <li><a href="">Dompet Keluar</a></li>
         </ul>
         <h2 class="font-semibold">Laporan</h2>
