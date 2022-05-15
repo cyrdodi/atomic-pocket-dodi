@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DompetController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DompetMasukController;
+use App\Http\Controllers\DompetKeluarController;
 use App\Http\Controllers\DompetStatusController;
 use App\Http\Controllers\KategoriStatusController;
 
@@ -43,3 +44,7 @@ Route::post('/master/kategori/update', [KategoriStatusController::class, 'update
 Route::get('/transaksi/dompet-masuk', [DompetMasukController::class, 'index'])->name('transaksi.dompet_masuk');
 Route::get('/transaksi/dompet-masuk/create', [DompetMasukController::class, 'create'])->name('transaksi.dompet_masuk_create');
 Route::post('/transaksi/dompet-masuk/create', [DompetMasukController::class, 'store']);
+
+Route::get('/transaksi/dompet-keluar', [DompetKeluarController::class, 'index'])->name('transaksi.dompet_keluar');
+Route::get('/transaksi/dompet-keluar/create', [DompetKeluarController::class, 'create'])->name('transaksi.dompet_keluar_create');
+Route::post('/transaksi/dompet-keluar/create', [DompetKeluarController::class, 'store']);
