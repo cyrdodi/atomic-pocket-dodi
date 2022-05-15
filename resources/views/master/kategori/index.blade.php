@@ -1,7 +1,7 @@
 <x-layout>
   <div class="flex items-center justify-between px-4 py-2 rounded-lg shadow">
     <div class="flex">
-      <h1>Kategori</h1> | <h2></h2>
+      <h1 class="text-lg font-semibold text-sky-500">Kategori</h1>
     </div>
 
     <div class="flex items-center">

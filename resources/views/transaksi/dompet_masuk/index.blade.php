@@ -1,14 +1,7 @@
 <x-layout>
-  <div class="flex items-center justify-between px-4 py-2 rounded-lg shadow">
-    <div class="flex">
-      <h1>Dompet Masuk</h1>
-    </div>
-
-    <div class="flex items-center">
-      <x-button href="{{ route('transaksi.dompet_masuk_create') }}">Buat Baru</x-button>
-    </div>
-  </div>
-
+  <x-header title="Dompet Masuk">
+    <x-button href="{{ route('transaksi.dompet_masuk_create') }}">Buat Baru</x-button>
+  </x-header>
   {{-- flash message --}}
   <x-flash />
 
