@@ -16,7 +16,7 @@ class CreateTransaksiTable extends Migration
     Schema::create('transaksi', function (Blueprint $table) {
       $table->id();
       $table->string('kode');
-      $table->string('deskripsi');
+      $table->string('deskripsi')->nullable();
       $table->date('tanggal');
       $table->integer('nilai');
       $table->foreignId('dompet_id')->references('id')->on('dompet')->constrained();

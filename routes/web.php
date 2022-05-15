@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DompetController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DompetMasukController;
 use App\Http\Controllers\DompetKeluarController;
@@ -48,3 +49,6 @@ Route::post('/transaksi/dompet-masuk/create', [DompetMasukController::class, 'st
 Route::get('/transaksi/dompet-keluar', [DompetKeluarController::class, 'index'])->name('transaksi.dompet_keluar');
 Route::get('/transaksi/dompet-keluar/create', [DompetKeluarController::class, 'create'])->name('transaksi.dompet_keluar_create');
 Route::post('/transaksi/dompet-keluar/create', [DompetKeluarController::class, 'store']);
+
+Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan');
+Route::get('/laporan/result', [LaporanController::class, 'show'])->name('laporan.result');

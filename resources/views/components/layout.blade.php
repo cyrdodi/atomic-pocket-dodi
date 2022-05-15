@@ -34,7 +34,7 @@
         </ul>
         <h2 class="font-semibold">Laporan</h2>
         <ul>
-          <li><a href="">Laporan Transaksi</a></li>
+          <li><a href="{{ route('laporan') }}">Laporan Transaksi</a></li>
         </ul>
       </nav>
     </section>

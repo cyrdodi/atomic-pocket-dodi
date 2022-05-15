@@ -25,8 +25,8 @@ class DompetKeluarController extends Controller
     return view(
       'transaksi.dompet_keluar.create',
       [
-        'kategori' => Kategori::orderBy('nama', 'asc')->get(),
-        'dompet' => Dompet::orderBy('nama', 'asc')->get()
+        'kategori' => Kategori::where('status_id', 1)->orderBy('nama', 'asc')->get(),
+        'dompet' => Dompet::where('status_id', 1)->orderBy('nama', 'asc')->get()
       ]
     );
   }
