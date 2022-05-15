@@ -36,7 +36,6 @@
           <th class="px-2 py-3 text-left">Kategori</th>
           <th class="px-2 py-3 text-left">Nilai</th>
           <th class="px-2 py-3 text-left">Dompet</th>
-          <th class="px-2 py-3 ">Action</th>
         </tr>
       </thead>
       <tbody class="divide-y">
@@ -47,20 +46,8 @@
           <td class="px-2 py-3">{{ $item->kode }}</td>
           <td class="px-2 py-3">{{ $item->deskripsi }}</td>
           <td class="px-2 py-3">{{ $item->kategori->nama }}</td>
-          <td class="px-2 py-3">{{ $item->nilai }}</td>
+          <td class="px-2 py-3">(+) {{ $item->nilai }}</td>
           <td class="px-2 py-3">{{ $item->dompet->nama }}</td>
-          <td class="px-2 py-3">
-            <div class="flex items-center justify-center space-x-2">
-              <x-badge href="/master/dompet/{{ $item->id }}">Detail</x-badge>
-              <x-badge href="{{ route('master.dompet_edit', [$item->id]) }}">Ubah</x-badge>
-              <form action="{{ route('master.dompet_status_update') }}" method="post">
-                @csrf
-                <input type="text" name="dompet_id" value="{{ $item->id }}" hidden>
-                <button type="submit" class="px-2 font-semibold text-white rounded-xl bg-sky-500">{{ $item->status->nama
-                  }}</button>
-              </form>
-            </div>
-          </td>
         </tr>
         @endforeach
       </tbody>
