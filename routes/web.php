@@ -21,7 +21,7 @@ use App\Http\Controllers\KategoriStatusController;
 */
 
 Route::get('/', function () {
-  return view('home');
+  return redirect()->route('master.dompet');
 });
 
 Route::get('/master/dompet', [DompetController::class, 'index'])->name('master.dompet');
